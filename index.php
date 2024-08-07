@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['longUrl'])) {
     $stmt->execute();
     $last_inserted_id = $conn->lastInsertId();
     $short_code = base62_encode($last_inserted_id);
-    $short_url = "http://localhost:8000/" . $short_code;
+    $short_url = DOMAIN . $short_code;
 } elseif ($_SERVER['REQUEST_METHOD'] === 'GET' && !empty($short_code)) {
     $id = base62_decode($short_code);
 
