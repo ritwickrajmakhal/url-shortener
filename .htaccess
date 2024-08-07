@@ -1,0 +1,4 @@
+RewriteEngine On
+
+# Rewrite rule to handle short URLs
+RewriteRule ^([a-zA-Z0-9]+)$ index.php?code=$1 [L,QSA]
